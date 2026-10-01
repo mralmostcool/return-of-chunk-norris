@@ -1,0 +1,25 @@
+# Build output
+target/
+build/
+*.jar
+*.war
+
+# Source control & IDEs
+.git/
+.gitignore
+.gitattributes
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Documentation & temporary archives
+*.md
+rocn.zip
+compose.yaml
+
+# Local secrets & environment files
+.env
+.env.*
