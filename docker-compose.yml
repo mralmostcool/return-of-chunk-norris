@@ -22,8 +22,7 @@ services:
       - "-c"
       - "password_encryption=scram-sha-256"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - ${POSTGRES_INIT_SCRIPTS_PATH:-./init-scripts}:/docker-entrypoint-initdb.d:ro
+      - ${POSTGRES_DATA_PATH:-./data/postgres}:/var/lib/postgresql/data
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
     healthcheck:
@@ -32,6 +31,3 @@ services:
       timeout: 5s
       retries: 5
       start_period: 10s
-
-volumes:
-  postgres_data:
