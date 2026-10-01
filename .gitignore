@@ -1,0 +1,49 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+**/secrets/
+
+# Build outputs
+target/
+build/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+.gradle/
+
+# Logs
+*.log
+logs/
+
+# IDE & Editors
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.vscode/
+.settings/
+.project
+.classpath
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Local infrastructure & DB data
+data/
+pgdata/
+
+# AI & tool cache
+.gemini/
+scratch/
