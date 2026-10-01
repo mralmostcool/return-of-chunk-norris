@@ -53,14 +53,15 @@ The backend is a **Spring Boot** application. All local infrastructure (database
 │       │   ├── java/[com/example/app]/
 │       │   │   ├── Application.java
 │       │   │   ├── config/          # @Configuration classes, security, beans
-│       │   │   ├── controller/      # REST controllers (thin)
-│       │   │   ├── service/         # Business logic
-│       │   │   ├── repository/      # Spring Data repositories
-│       │   │   ├── domain/          # JPA entities and domain model
-│       │   │   ├── dto/             # Request/response objects
-│       │   │   ├── mapper/          # Entity <-> DTO mappers (MapStruct)
-│       │   │   ├── exception/       # Custom exceptions + @ControllerAdvice
-│       │   │   └── util/
+|       |   |   └── [Modulith]
+│       │   │       ├── controller/      # REST controllers (thin)
+│       │   │       ├── service/         # Business logic
+│       │   │       ├── repository/      # Spring Data repositories
+│       │   │       ├── domain/          # JPA entities and domain model
+│       │   │       ├── dto/             # Request/response objects
+│       │   │       ├── mapper/          # Entity <-> DTO mappers (MapStruct)
+│       │   │       ├── exception/       # Custom exceptions + @ControllerAdvice
+│       │   │       └── util/
 │       │   └── resources/
 │       │       ├── application.yml
 │       │       ├── application-dev.yml
