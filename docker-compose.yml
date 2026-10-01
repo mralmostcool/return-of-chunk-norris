@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:16
+    image: ${POSTGRES_IMAGE:-pgvector/pgvector:pg16}
     container_name: ${POSTGRES_CONTAINER_NAME:-chunk-norris-db}
     restart: unless-stopped
     shm_size: ${POSTGRES_SHM_SIZE:-1gb}
