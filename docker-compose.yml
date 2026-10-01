@@ -3,6 +3,7 @@ services:
     image: ${POSTGRES_IMAGE:-pgvector/pgvector:pg16}
     container_name: ${POSTGRES_CONTAINER_NAME:-chunk-norris-db}
     restart: unless-stopped
+    env_file: .env
     shm_size: ${POSTGRES_SHM_SIZE:-1gb}
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
@@ -31,3 +32,24 @@ services:
       timeout: 5s
       retries: 5
       start_period: 10s
+
+  minio:
+    image: ${MINIO_IMAGE:-cgr.dev/chainguard/minio:latest}
+    container_name: ${MINIO_CONTAINER_NAME:-chunk-norris-minio}
+    restart: unless-stopped
+    env_file: .env
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    volumes:
+      - ${MINIO_DATA_PATH:-./data/minio}:/data
+    ports:
+      - "${MINIO_PORT:-9000}:9000"
+      - "${MINIO_CONSOLE_PORT:-9001}:9001"
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s

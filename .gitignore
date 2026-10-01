@@ -42,6 +42,8 @@ Desktop.ini
 
 # Local infrastructure & DB data
 data/
+data/minio/
+data/postgres/
 pgdata/
 
 # AI & tool cache
