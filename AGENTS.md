@@ -60,7 +60,7 @@ The backend is a **Spring Boot** application. All local infrastructure (database
 │       │   │       ├── domain/          # JPA entities and domain model
 │       │   │       ├── dto/             # Request/response objects
 │       │   │       ├── mapper/          # Entity <-> DTO mappers (MapStruct)
-│       │   │       ├── exception/       # Custom exceptions + @ControllerAdvice
+│       │   │       ├── exception/       # Custom exception + @ControllerAdvice
 │       │   │       └── util/
 │       │   └── resources/
 │       │       ├── application.yml
